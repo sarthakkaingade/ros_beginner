@@ -15,7 +15,7 @@ class ImageConverter
 	image_transport::Subscriber image_sub_;
 	image_transport::Publisher image_pub_;
   
-public:
+	public:
 	ImageConverter() : it_(nh_)
 	{
 		// Subscrive to input video feed and publish output video feed
@@ -53,14 +53,14 @@ public:
 	    
 	   	 // Output modified video stream
 		image_pub_.publish(cv_ptr->toImageMsg());
-  }
+	 }
 };
 
 int main(int argc, char** argv)
 {
-  ros::init(argc, argv, "ros_opencv_bridge");
-  ImageConverter ic;
-  cout<<"\nHello";
-  ros::spin();
-  return 0;
+	ros::init(argc, argv, "ros_opencv_bridge");
+	ImageConverter ic;
+	cout<<"\nHello";
+	ros::spin();
+	return 0;
 }
